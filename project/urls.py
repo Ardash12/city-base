@@ -16,11 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from city.views import CityViewset
+from city.views import CityViewSet
 
 
 router = routers.DefaultRouter()
-router.register(r'city', CityViewset)
+router.register(r'city', CityViewSet)
 
 
 urlpatterns = [
