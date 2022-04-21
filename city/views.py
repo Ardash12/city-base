@@ -19,9 +19,10 @@ class CityViewSet(viewsets.ModelViewSet):
             print('No')
             self.cache_dict[name] = 1   # добавляем значение в словарь "O(1)"
             self.cache_list.append(name)   # добавляем значение в конец списока "O(1)"
-            if len(self.cache_list) > 5:   # проверяем длину списка "O(1)"
+            if len(self.cache_list) > 2:   # проверяем длину списка "O(1)"
+                print(self.cache_list[0])
+                self.cache_dict.pop(self.cache_list[0])  # Удаляем из словаря "O(1)"
                 self.cache_list.pop(0)   # Если кеш больше 100, удаляем первый элемент "O(1)"
-                self.cache_dict.pop(name)   # Удаляем из словаря "O(1)"
             print('Кэш', self.cache_dict)
             print('List', self.cache_list)
 
